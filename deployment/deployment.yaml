@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: r53ns-monitor-data
+  namespace: monitoring
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: r53ns-monitor
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: r53ns-monitor
+  template:
+    metadata:
+      labels:
+        app: r53ns-monitor
+    spec:
+      containers:
+      - name: r53ns-monitor
+        image: ghcr.io/venomseven/r53ns-monitor:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: aws-credentials
+              key: access-key
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aws-credentials
+              key: secret-key
+        volumeMounts:
+        - name: config
+          mountPath: /app/config.yaml
+          subPath: config.yaml
+        - name: data
+          mountPath: /app/data
+      volumes:
+      - name: config
+        configMap:
+          name: r53ns-monitor-config
+      - name: data
+        persistentVolumeClaim:
+          claimName: r53ns-monitor-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: r53ns-monitor
+  namespace: monitoring
+spec:
+  selector:
+    app: r53ns-monitor
+  ports:
+  - port: 3000
+    targetPort: 3000
+  type: ClusterIP

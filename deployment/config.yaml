@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: r53ns-monitor-config
+  namespace: monitoring
+data:
+  config.yaml: |
+    aws:
+      region: "us-east-1"
+      history_file: "/tmp/state/nameserver_history.json"
+
+    monitoring:
+      max_entries: 100
+      max_days: 30
+      frequencies:
+        production: 300    # Default 5 minutes for production
+        staging: 600      # Default 10 minutes for staging
+      retention_days: 30
+      retention_entries: 1000
+
+    hosted_zones:
+      production:
+        - name: "example.com"
+          description: "Production Example"
+          check_frequency: 15  # Check every 15 seconds
+          alert_channel: "#alerts"
+          priority: "high"
+      staging:
+        - name: "staging.example.com"
+          description: "Staging Example"
+          check_frequency: 15  # Check every 15 seconds
+          alert_channel: "#alerts"
+          priority: "medium"
+
+    slack:
+      default_channel: "#alerts"
+      webhooks:
+        prod: "https://hooks.slack.com/services/YOUR/WEBHOOK/HERE"
+        staging: "https://hooks.slack.com/services/YOUR/WEBHOOK/HERE"
+        dev: "https://hooks.slack.com/services/YOUR/WEBHOOK/HERE"
