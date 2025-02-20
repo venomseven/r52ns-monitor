@@ -93,48 +93,6 @@ sequenceDiagram
     end
 ```
 
-### Component Architecture
-```mermaid
-graph TB
-    subgraph "Configuration Layer"
-        C[config.yaml]
-        ENV[Environment Variables]
-    end
-
-    subgraph "Application Core"
-        direction TB
-        MC[Monitor Controller]
-        ZM[Zone Manager]
-        NSR[Nameserver Resolver]
-        CH[Change Handler]
-    end
-
-    subgraph "Storage Layer"
-        HS[(History Storage)]
-    end
-
-    subgraph "API Layer"
-        FA[Flask API]
-        WH[Webhook Handler]
-    end
-
-    subgraph "Integration Layer"
-        R53C[Route53 Client]
-        SC[Slack Client]
-    end
-
-    C --> MC
-    ENV --> MC
-    MC --> ZM
-    ZM --> NSR
-    NSR --> CH
-    CH --> HS
-    CH --> SC
-    FA --> WH
-    WH --> CH
-    ZM --> R53C
-```
-
 ## Prerequisites
 
 - Python 3.8+
