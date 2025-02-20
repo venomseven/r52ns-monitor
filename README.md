@@ -1,7 +1,7 @@
 # Route53 Nameserver Monitor
 
 ![CI](https://github.com/venomseven/r53ns-monitor/actions/workflows/ci.yml/badge.svg)
-![Github stars](https://badgen.net/github/stars/venomseven/r53ns-monitor?icon=github&label=stars)
+![Github stars](https://badgen.net/github/stars/venomseven/r53ns-monitor?icon=github&label=stars&cache=300)
 ![Github forks](https://badgen.net/github/forks/venomseven/r53ns-monitor?icon=github&label=forks)
 ![Github issues](https://img.shields.io/github/issues/venomseven/r53ns-monitor)
 
