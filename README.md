@@ -1,7 +1,6 @@
 # Route53 Nameserver Monitor
 
-![Build](https://github.com/venomseven/r53ns-monitor/actions/workflows/build.yml/badge.svg)
-![Release](https://github.com/venomseven/r53ns-monitor/actions/workflows/release.yml/badge.svg)
+![CI](https://github.com/venomseven/r53ns-monitor/actions/workflows/ci.yml/badge.svg)
 ![Github stars](https://badgen.net/github/stars/venomseven/r53ns-monitor?icon=github&label=stars)
 ![Github forks](https://badgen.net/github/forks/venomseven/r53ns-monitor?icon=github&label=forks)
 ![Github issues](https://img.shields.io/github/issues/venomseven/r53ns-monitor)
