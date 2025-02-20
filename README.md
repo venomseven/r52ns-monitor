@@ -4,7 +4,6 @@
 ![Github stars](https://badgen.net/github/stars/venomseven/r53ns-monitor?icon=github&label=stars)
 ![Github forks](https://badgen.net/github/forks/venomseven/r53ns-monitor?icon=github&label=forks)
 ![Github issues](https://img.shields.io/github/issues/venomseven/r53ns-monitor)
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/r53ns-monitor)](https://artifacthub.io/packages/search?repo=r53ns-monitor)
 
 A robust monitoring solution that tracks AWS Route53 nameserver changes and provides real-time Slack notifications for DNS infrastructure monitoring.
 
@@ -232,7 +231,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For support, please:
 1. Check existing issues
 2. Create a new issue with detailed information
-3. Join our community Discord/Slack channel
 
 ## Roadmap
 
