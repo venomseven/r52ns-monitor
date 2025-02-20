@@ -1,8 +1,14 @@
 # Route53 Nameserver Monitor
 
+![Build](https://github.com/yourusername/r53ns-monitor/actions/workflows/build.yml/badge.svg)
+![Release](https://github.com/yourusername/r53ns-monitor/actions/workflows/release.yml/badge.svg)
+![Github stars](https://badgen.net/github/stars/yourusername/r53ns-monitor?icon=github&label=stars)
+![Github forks](https://badgen.net/github/forks/yourusername/r53ns-monitor?icon=github&label=forks)
+![Github issues](https://img.shields.io/github/issues/yourusername/r53ns-monitor)
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/r53ns-monitor)](https://artifacthub.io/packages/search?repo=r53ns-monitor)
+
 A robust monitoring solution that tracks AWS Route53 nameserver changes and provides real-time Slack notifications for DNS infrastructure monitoring.
 
-![Route53 Nameserver Monitor Architecture](architecture-diagram.png)
 
 ## Overview
 
