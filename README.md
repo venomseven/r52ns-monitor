@@ -5,23 +5,56 @@
 ![Github forks](https://badgen.net/github/forks/venomseven/r53ns-monitor?icon=github&label=forks)
 ![Github issues](https://img.shields.io/github/issues/venomseven/r53ns-monitor)
 
-A robust monitoring solution that tracks AWS Route53 nameserver changes and provides real-time Slack notifications for DNS infrastructure monitoring.
+A Kubernetes-native monitoring tool that helps maintain DNS infrastructure reliability by monitoring AWS Route53 for critical nameserver changes:
+
+Key Monitoring Features:
+- 🔍 Detects changes in nameserver configurations and their IP addresses
+- 🌐 Monitors nameserver assignments for your Route53 hosted zones
+- ⚠️ Alerts on unauthorized or unexpected DNS delegation changes
+- 📱 Provides instant Slack notifications for any detected changes
+
+Perfect for:
+- DevOps teams managing critical DNS infrastructure
+- Organizations requiring strict DNS change monitoring
+- Multi-environment AWS setups needing DNS oversight
+- Teams wanting early detection of DNS configuration changes
 
 
 ## Overview
 
-Route53 Nameserver Monitor is a Python-based tool that continuously monitors AWS Route53 hosted zones for nameserver IP changes. It provides immediate notifications through Slack when changes are detected, helping teams maintain DNS infrastructure reliability.
+Route53 Nameserver Monitor is a Kubernetes-native tool that safeguards your DNS infrastructure by monitoring AWS Route53 hosted zones for critical changes. It watches for modifications in nameserver configurations, delegation settings, and IP assignments, providing immediate Slack notifications when changes are detected. This helps teams maintain DNS infrastructure reliability and respond quickly to potential issues.
 
 ## Features
 
-- 🔍 Real-time monitoring of Route53 nameserver configurations
-- 🌐 Support for both IPv4 and IPv6 address monitoring
-- ⏰ Configurable monitoring frequencies per zone
-- 📱 Slack integration with interactive notifications
-- 🔄 Resolution workflow with acknowledgment buttons
-- 📊 Historical change tracking with configurable retention
-- 🏷️ Environment-based zone grouping (prod, staging, etc.)
-- ⚡ Multi-threaded monitoring for efficient resource usage
+- 🔍 Comprehensive monitoring:
+  - Nameserver configuration changes
+  - DNS delegation modifications
+  - IP address changes (IPv4 and IPv6)
+  - Zone assignment updates
+
+- 🚨 Advanced alerting:
+  - Real-time Slack notifications
+  - Interactive resolution workflows
+  - Customizable alert channels per zone
+  - Priority-based alert routing
+
+- ⚙️ Flexible configuration:
+  - Environment-based zone grouping (prod/staging/dev)
+  - Per-zone monitoring frequencies
+  - Configurable retention policies
+  - Custom alert thresholds
+
+- 🛠️ Kubernetes-native:
+  - Designed for Kubernetes deployments
+  - ConfigMap-based configuration
+  - Kubernetes secrets integration
+  - Health and readiness probes
+
+- 📊 Operational features:
+  - Multi-threaded monitoring architecture
+  - Historical change tracking
+  - Audit logging
+  - Performance metrics
 
 ## Architecture
 
